@@ -9,9 +9,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      // '@': path.resolve(__dirname, 'src/components')
     },
-    extensions: ['.js', '.jsx', '.json', '.css', '.scss'],
+    extensions: ['.js', '.jsx'],
     modules: ['node_modules']
   },
   module: {
@@ -30,9 +30,22 @@ module.exports = {
         }
       }]
     },{
-      test: /\.s?css/,
+      test: /\.s?css$/,
       exclude: /node_modules/,
-      use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader']
+      use: [{
+        loader: 'style-loader'
+      }, {
+        loader: 'css-loader'
+      }, {
+        loader: 'sass-loader'
+      }, {
+        loader: 'postcss-loader',
+        options: {
+          plugins: [
+            require('autoprefixer')
+          ]
+        }
+      }]
     }]
   },
   plugins: [
