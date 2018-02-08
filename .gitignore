@@ -1,0 +1,14 @@
+# Mac directory file
+.DS_Store
+
+# VSCode config directory
+.vscode
+
+# Packages directory
+node_modules
+
+# package.json lock file
+package-lock.json
+
+# compile output directory
+# dist
