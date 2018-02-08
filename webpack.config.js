@@ -25,6 +25,7 @@ module.exports = {
         }
       }, {
         loader: 'eslint-loader',
+        // 在解析之前就使用 eslint 检查语法规范
         options: {
           enforce: 'pre'
         }
@@ -40,6 +41,7 @@ module.exports = {
         loader: 'sass-loader'
       }, {
         loader: 'postcss-loader',
+        // 为了解决 postcss 解析 sass 的问题（不用 postcss.config.js 方式） 
         options: {
           plugins: [
             require('autoprefixer')
