@@ -27,3 +27,9 @@ $ npm install webpack-dev-server --save-dev
 ```
 
 *提示：* 使用 `npm prune` 删除不需要的依赖包。
+
+## 设置布局
+
+```shell
+$ npm install semantic-ui-react semantic-ui-css --save
+```

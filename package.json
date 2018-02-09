@@ -2,6 +2,10 @@
   "name": "learning",
   "version": "1.0.0",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:beitaz/learning.git"
+  },
   "scripts": {
     "build": "rimraf dist && webpack --bail --display-error-details",
     "start": "webpack-dev-server --color --progress",
@@ -11,7 +15,9 @@
   "license": "ISC",
   "dependencies": {
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "semantic-ui-css": "^2.2.14",
+    "semantic-ui-react": "^0.78.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",
