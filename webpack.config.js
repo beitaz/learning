@@ -30,15 +30,13 @@ module.exports = {
           enforce: 'pre'
         }
       }]
-    },{
-      test: /\.s?css$/,
-      exclude: /node_modules/,
-      use: [{
-        loader: 'style-loader'
-      }, {
-        loader: 'css-loader'
-      }, {
-        loader: 'sass-loader'
+    }, {
+      test: /\.s[ac]ss$/,
+      use: ['style-loader', {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 1
+        }
       }, {
         loader: 'postcss-loader',
         // 为了解决 postcss 解析 sass 的问题（不用 postcss.config.js 方式） 
@@ -47,7 +45,13 @@ module.exports = {
             require('autoprefixer')
           ]
         }
-      }]
+      }, 'sass-loader']
+    }, {
+      test: /\.css$/,
+      loader: 'style-loader!css-loader'
+    }, {
+      test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+      loader: 'url-loader?limit=100000'
     }]
   },
   plugins: [
