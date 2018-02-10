@@ -25,7 +25,6 @@ const HomepageHeading = ({ mobile }) => (
     <Header
       as='h1'
       content='Imagine-a-Company'
-      inverted
       style={{
         fontSize: mobile ? '2em' : '4em',
         fontWeight: 'normal',
@@ -36,7 +35,6 @@ const HomepageHeading = ({ mobile }) => (
     <Header
       as='h2'
       content='Do whatever you want when you want to.'
-      inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
         fontWeight: 'normal',
@@ -78,10 +76,9 @@ class DesktopContainer extends Component {
     return (
       <Responsive {...Responsive.onlyComputer}>
         <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>
-          <Segment inverted textAlign='center' style={{ minHeight: 700, padding: '1em 0em' }} vertical>
+          <Segment textAlign='center' style={{ minHeight: 700, padding: '1em 0em' }} vertical>
             <Menu
               fixed={fixed ? 'top' : null}
-              inverted={!fixed}
               pointing={!fixed}
               secondary={!fixed}
               size='large'
@@ -92,8 +89,8 @@ class DesktopContainer extends Component {
                 <Menu.Item as='a'>Company</Menu.Item>
                 <Menu.Item as='a'>Careers</Menu.Item>
                 <Menu.Item position='right'>
-                  <Button as='a' inverted={!fixed}>Log in</Button>
-                  <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>Sign Up</Button>
+                  <Button as='a' >Log in</Button>
+                  <Button as='a' primary={fixed} style={{ marginLeft: '0.5em' }}>Sign Up</Button>
                 </Menu.Item>
               </Container>
             </Menu>
@@ -128,25 +125,25 @@ class MobileContainer extends Component {
     return (
       <Responsive {...Responsive.onlyMobile}>
         <Sidebar.Pushable>
-          <Sidebar as={Menu} animation='uncover' inverted vertical visible={sidebarOpened}>
+          <Sidebar as={Menu} animation='uncover' vertical visible={sidebarOpened}>
             <Menu.Item as='a' active>Home</Menu.Item>
             <Menu.Item as='a'>Work</Menu.Item>
             <Menu.Item as='a'>Company</Menu.Item>
             <Menu.Item as='a'>Careers</Menu.Item>
             <Menu.Item as='a'>Log in</Menu.Item>
-            <Menu.Item as='a' primary>Sign Up</Menu.Item>
+            <Menu.Item as='a' primary="true">Sign Up</Menu.Item>
           </Sidebar>
 
           <Sidebar.Pusher dimmed={sidebarOpened} onClick={this.handleToggle} style={{ minHeight: '100vh' }}>
-            <Segment inverted textAlign='center' style={{ minHeight: 350, padding: '1em 0em' }} vertical>
+            <Segment textAlign='center' style={{ minHeight: 350, padding: '1em 0em' }} vertical>
               <Container>
-                <Menu inverted pointing secondary size='large'>
+                <Menu pointing secondary size='large'>
                   <Menu.Item onClick={this.handleToggle}>
                     <Icon name='sidebar' />
                   </Menu.Item>
                   <Menu.Item position='right'>
-                    <Button as='a' inverted>Log in</Button>
-                    <Button as='a' inverted style={{ marginLeft: '0.5em' }}>Sign Up</Button>
+                    <Button as='a'>Log in</Button>
+                    <Button as='a' style={{ marginLeft: '0.5em' }}>Sign Up</Button>
                   </Menu.Item>
                 </Menu>
               </Container>
@@ -251,13 +248,13 @@ const HomepageLayout = () => (
         <Button as='a' size='large'>I&apos;m Still Quite Interested</Button>
       </Container>
     </Segment>
-    <Segment inverted vertical style={{ padding: '5em 0em' }}>
+    <Segment vertical style={{ padding: '5em 0em' }}>
       <Container>
-        <Grid divided inverted stackable>
+        <Grid divided stackable>
           <Grid.Row>
             <Grid.Column width={3}>
-              <Header inverted as='h4' content='About' />
-              <List link inverted>
+              <Header as='h4' content='About' />
+              <List link>
                 <List.Item as='a'>Sitemap</List.Item>
                 <List.Item as='a'>Contact Us</List.Item>
                 <List.Item as='a'>Religious Ceremonies</List.Item>
@@ -265,8 +262,8 @@ const HomepageLayout = () => (
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header inverted as='h4' content='Services' />
-              <List link inverted>
+              <Header as='h4' content='Services' />
+              <List link>
                 <List.Item as='a'>Banana Pre-Order</List.Item>
                 <List.Item as='a'>DNA FAQ</List.Item>
                 <List.Item as='a'>How To Access</List.Item>
@@ -274,7 +271,7 @@ const HomepageLayout = () => (
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
-              <Header as='h4' inverted>Footer Header</Header>
+              <Header as='h4'>Footer Header</Header>
               <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
             </Grid.Column>
           </Grid.Row>

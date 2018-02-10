@@ -65,7 +65,7 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
     compress: true,
-    // host: 'localhost',
+    host: '127.0.0.1',
     // port: 8081,
     // proxy: 'http://localhost:8087',
     open: 'Google Chrome', // true 或者 浏览器名称 'Google Chrome', 'Firefox', 'Safari'
